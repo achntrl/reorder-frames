@@ -1,0 +1,13 @@
+full_size_frames/
+old/
+ordered_frames/
+small_frames/
+frames/
+.vscode/
+.ipynb*
+**/*.pyc
+**/*.mp4
+**/*.json
+
+!corrupted_video.mp4
+
