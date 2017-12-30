@@ -10,4 +10,4 @@ frames/
 **/*.json
 
 !corrupted_video.mp4
-
+!matching_data.json
