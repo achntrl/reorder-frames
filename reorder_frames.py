@@ -66,6 +66,7 @@ def reorder_frames():
 
     for i in range(len(np_orders)):
         img_order += [most_common_weighted(list(np_orders[:, i]), list(np_weights[:, i]))]
+        # img_order += [most_common(list(np_orders[:, i]))]
 
     print("# of misplaced images:", compare_results(img_order))
 
@@ -105,7 +106,9 @@ def compare_results(img_order):
     ]
     count = 0
     for i, order in enumerate(img_order):
-        count += 1 if good_sequence[i] != order else 0
+        if good_sequence[i] != order:
+            count += 1
+            print("frame", order, "is at position", i, "and should be at position", good_sequence.index(order))
     return count
 
 
