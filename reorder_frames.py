@@ -65,7 +65,7 @@ def reorder_frames():
     img_order = []
 
     for i in range(len(np_orders)):
-        img_order += [most_weight_frequent(list(np_orders[:, i]), list(np_weights[:, i]))]
+        img_order += [most_common_weighted(list(np_orders[:, i]), list(np_weights[:, i]))]
 
     print("# of misplaced images:", compare_results(img_order))
 
@@ -119,7 +119,7 @@ def most_common(arr):
     return max(set(arr), key=arr.count)
 
 
-def most_weight_frequent(arr, weights):
+def most_common_weighted(arr, weights):
     """ Returns the most frequent occurence in array. The frequency
     is weighted by the array of weights. """
     frequencies = {}
